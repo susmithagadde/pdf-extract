@@ -1,0 +1,335 @@
+$theme: #454cad;
+$dark-text: #5f6982;
+
+// html,
+// body,
+// * {
+//   box-sizing: border-box;
+//   font-size: 16px;
+// }
+// html,
+// body {
+//   height: 100%;
+//   text-align: center;
+// }
+body {
+  // padding: 2rem;
+  background: #f8f8f8;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  color: $theme;
+  margin-bottom: 0;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: $dark-text;
+}
+// Upload Demo
+//
+.uploader {
+  display: block;
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 450px;
+
+  label {
+    float: left;
+    clear: both;
+    width: 100%;
+    // padding: 2rem 1.5rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 7px;
+    border: 3px solid #eee;
+    transition: all 0.2s ease;
+    user-select: none;
+    // overflow: scroll;
+    max-height: 50vh;
+    &:hover {
+      border-color: $theme;
+    }
+    &.hover {
+      border: 3px solid $theme;
+      box-shadow: inset 0 0 0 6px #eee;
+
+      #start {
+        i.fa {
+          transform: scale(0.8);
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  .browse-container {
+    vertical-align: middle;
+    display: table-cell;
+  }
+
+  #start {
+    float: left;
+    clear: both;
+    width: 100%;
+    // padding: 20px;
+    display: table;
+    height: 40vh;
+    &.hidden {
+      display: none;
+    }
+    i.fa {
+      font-size: 35px;
+      margin-bottom: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  #response {
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+    #messages {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  #file-image {
+    display: inline;
+    margin: 0 auto 0.5rem auto;
+    // width: auto;
+    // height: auto;
+    max-width: 180px;
+    &.hidden {
+      display: none;
+    }
+  }
+
+  #notimage {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+  }
+
+  progress,
+  .progress {
+    // appearance: none;
+    display: inline;
+    clear: both;
+    margin: 0 auto;
+    // width: 100%;
+    // height: 8px;
+    max-width: 180px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #eee;
+    overflow: hidden;
+  }
+
+  .progress[value]::-webkit-progress-bar {
+    border-radius: 4px;
+    background-color: #eee;
+  }
+
+  .progress[value]::-webkit-progress-value {
+    background: linear-gradient(to right, darken($theme, 8%) 0%, $theme 50%);
+    border-radius: 4px;
+  }
+  .progress[value]::-moz-progress-bar {
+    background: linear-gradient(to right, darken($theme, 8%) 0%, $theme 50%);
+    border-radius: 4px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  div {
+    margin: 0 0 0.5rem 0;
+    color: $dark-text;
+  }
+  .btn {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 1rem 0.5rem;
+    clear: both;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: initial;
+    border: none;
+    border-radius: 0.2rem;
+    outline: none;
+    padding: 0 0.5rem;
+    height: 36px;
+    line-height: 36px;
+    color: gray;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    // background: $theme;
+    // border-color: $theme;
+    border: 1px solid $theme;
+    cursor: pointer;
+  }
+}
+
+#pdf-canvas {
+  //   border: 1px solid pink;
+  max-width: 600px;
+}
+.container1 {
+  width: 100%;
+  height: 100%;
+  .upload-container {
+    width: 80%;
+    margin: auto;
+    // height: 65vh;
+  }
+}
+.extract-btn {
+  .btn {
+    display: inline-block;
+    margin: 0rem 0.5rem 1rem 0.5rem;
+    clear: both;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: initial;
+    border: none;
+    border-radius: 0.2rem;
+    outline: none;
+    padding: 0.4rem 1rem;
+    /* height: 50px; */
+    line-height: 38px;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    border: 1px solid #454cad;
+    background: #454cad;
+    cursor: pointer;
+  }
+}
+
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+.scroll {
+  overflow: scroll;
+}
+.overflow-none {
+  overflow: none;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+
+  #file-upload-form {
+    width: 400px;
+  }
+
+  .file-upload-wrapper {
+    $defaultColor: #454cad;
+    $height: 60px;
+
+    position: relative;
+    width: 50%;
+    height: $height;
+
+    &:after {
+      content: attr(data-text);
+      font-size: 18px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      padding: 10px 15px;
+      display: block;
+      width: calc(100% - 40px);
+      pointer-events: none;
+      z-index: 20;
+    //   height: $height - 20px;
+      line-height: 30px;
+      color: rgba(0, 0, 0, 0.54);
+      border-radius: 5px 10px 10px 5px;
+      font-weight: 700;
+      border: 1px solid;
+    }
+
+    &:before {
+      content: '\f0c6';
+      font-family: FontAwesome;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+    //   height: 60px;
+      background: $defaultColor;
+      color: #fff;
+      font-weight: 400;
+      z-index: 25;
+      font-size: 25px;
+      line-height: 52px;
+      padding: 0 15px;
+      text-transform: uppercase;
+      pointer-events: none;
+      border-radius: 0 5px 5px 0;
+    }
+
+    &:hover {
+      &:before {
+        background: darken($defaultColor, 10%);
+      }
+    }
+     input {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 99;
+      height: $height - 20px;
+      margin: 0;
+      padding: 0;
+      display: block;
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+
+  .loader {
+    border: 5px solid #fff;
+    border-top: 5px solid #3f51b5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 45%;
+    left: 48%;
+    z-index: 1302;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
